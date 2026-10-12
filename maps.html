@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+<!-- Leaflet JavaScript -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Maps | GMT 458 Web GIS</title>
+
+    <!-- Website CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- OpenLayers CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@10.7.0/ol.css">
+
+    <!-- OpenLayers JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/ol@10.7.0/dist/ol.js"></script>
+
+
+    <!-- Leaflet MarkerCluster -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js">
+    </script>
+
+</head>
+
+<body class="catlas-maps-page">
+
+    <!-- HEADER -->
+    <header>
+        <h1>My Interactive Maps</h1>
+        <p>Exploring Geographic Information with Web GIS</p>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="technologies.html">Technologies</a>
+        <a href="maps.html">My Maps</a>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+
+    <section>
+
+        <h2>🐾 My Travel Journal – Places I've Been</h2>
+
+
+
+        <p>
+            Welcome to my personal travel map!
+            This interactive Leaflet map shows the
+            cities I have visited in Türkiye and Europe.
+        </p>
+
+        <p>
+            Each paw represents a place I have explored.
+            Click on a paw to discover the city!
+            Markers appear at zoom level 5 and above.
+        </p>
+
+
+        <div id="leaflet-map"></div>
+    </section>
+
+    <main>
+
+        <section>
+            <h2>OpenLayers Map</h2>
+
+            <p>
+                This interactive map displays
+                Hacettepe University Beytepe Campus
+                in Ankara, Türkiye.
+            </p>
+
+            <div id="ol-map"></div>
+
+            <p>
+                You can zoom in, zoom out,
+                and move around the map.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>GMT 458 - Web GIS | 2026</p>
+    </footer>
+
+    <!-- OPENLAYERS MAP SCRIPT -->
+    <script>
+
+        const openLayersMap = new ol.Map({
+
+            target: 'ol-map',
+
+            layers: [
+                new ol.layer.Tile({
+                    source: new ol.source.XYZ({
+
+                        url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',
+
+                        attributions: 'Tiles © Esri and its data providers',
+
+                        wrapX: false
+
+                    })
+                })
+            ],
+
+            view: new ol.View({
+
+                center: ol.proj.fromLonLat([
+                    32.733,
+                    39.870
+                ]),
+
+                zoom: 14,
+
+                minZoom: 2
+
+            })
+
+        });
+
+    </script>
+
+
+
+    <script>
+        // DICLE'S CATLAS - TRAVEL MAP
+
+        // Create the Leaflet map
+        const leafletMap = L.map('leaflet-map', {
+            center: [45, 20],
+            zoom: 5,
+            minZoom: 3,
+            maxZoom: 18,
+            worldCopyJump: false,
+            maxBounds: [
+                [-85, -180],
+                [85, 180]
+            ],
+            maxBoundsViscosity: 1.0
+        });
+
+        // Esri topographic map
+        L.tileLayer(
+            'https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',
+            {
+                attribution: 'Tiles &copy; Esri and its data providers',
+                noWrap: true,
+                maxZoom: 18
+            }
+        ).addTo(leafletMap);
+
+        // Cities I have visited
+        const travelCities = [
+            {
+                name: "Istanbul",
+                country: "Türkiye",
+                lat: 41.0082,
+                lng: 28.9784
+            },
+            {
+                name: "Ankara",
+                country: "Türkiye",
+                lat: 39.9334,
+                lng: 32.8597
+            },
+            {
+                name: "Aydin",
+                country: "Türkiye",
+                lat: 37.8450,
+                lng: 27.8396
+            },
+            {
+                name: "Mugla",
+                country: "Türkiye",
+                lat: 37.2153,
+                lng: 28.3636
+            },
+            {
+                name: "Izmir",
+                country: "Türkiye",
+                lat: 38.4237,
+                lng: 27.1428
+            },
+            {
+                name: "Erzincan",
+                country: "Türkiye",
+                lat: 39.7500,
+                lng: 39.5000
+            },
+            {
+                name: "Paris",
+                country: "France",
+                lat: 48.8566,
+                lng: 2.3522
+            },
+            {
+                name: "Amsterdam",
+                country: "Netherlands",
+                lat: 52.3676,
+                lng: 4.9041
+            },
+            {
+                name: "Brussels",
+                country: "Belgium",
+                lat: 50.8503,
+                lng: 4.3517
+            },
+            {
+                name: "Luxembourg",
+                country: "Luxembourg",
+                lat: 49.6116,
+                lng: 6.1319
+            },
+            {
+                name: "Rhodes",
+                country: "Greece",
+                lat: 36.4341,
+                lng: 28.2176
+            },
+            {
+                name: "Tirana",
+                country: "Albania",
+                lat: 41.3275,
+                lng: 19.8187
+            },
+            {
+                name: "Frankfurt",
+                country: "Germany",
+                lat: 50.1109,
+                lng: 8.6821
+            }
+        ];
+
+        // Custom paw marker
+        const pawIcon = L.divIcon({
+            className: 'catlas-paw-marker',
+            html: '<span>🐾</span>',
+            iconSize: [34, 34],
+            iconAnchor: [17, 17],
+            popupAnchor: [0, -17]
+        });
+
+        // Marker layer
+
+        const travelMarkerLayer = L.markerClusterGroup({
+            showCoverageOnHover: false,
+            zoomToBoundsOnClick: true,
+            spiderfyOnMaxZoom: true,
+            maxClusterRadius: 60
+        });
+
+
+        // Add a paw marker for each city
+        travelCities.forEach(function (city) {
+
+            const marker = L.marker(
+                [city.lat, city.lng],
+                { icon: pawIcon }
+            );
+
+            const popup = document.createElement('div');
+            const title = document.createElement('strong');
+            const location = document.createElement('p');
+
+            title.textContent = '🐾 ' + city.name;
+            location.textContent = city.country;
+
+            popup.appendChild(title);
+            popup.appendChild(location);
+
+            marker.bindPopup(popup);
+            marker.addTo(travelMarkerLayer);
+        });
+
+        // Zoom-based marker visibility
+        const markerZoomThreshold = 4;
+
+        function updateTravelMarkers() {
+
+            if (leafletMap.getZoom() >= markerZoomThreshold) {
+
+                if (!leafletMap.hasLayer(travelMarkerLayer)) {
+                    travelMarkerLayer.addTo(leafletMap);
+                }
+
+            } else {
+
+                if (leafletMap.hasLayer(travelMarkerLayer)) {
+                    leafletMap.removeLayer(travelMarkerLayer);
+                }
+
+            }
+        }
+
+        leafletMap.on('zoomend', updateTravelMarkers);
+
+        // Show markers at initial zoom
+        updateTravelMarkers();
+
+    </script>
+
+
+</body>
+
+</html>

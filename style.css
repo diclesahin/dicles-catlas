@@ -1,0 +1,816 @@
+
+/* GENERAL PAGE DESIGN */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #123c69, #247ba0);
+    color: white;
+    text-align: center;
+    padding: 65px 20px;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    animation: slideDown 1.5s ease-out;
+}
+
+header p {
+    font-size: 18px;
+}
+
+/* NAVIGATION MENU */
+nav {
+    background-color: #102a43;
+    padding: 16px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 18px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #66d9ef;
+}
+
+/* MAIN CONTENT */
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+section {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    animation: fadeIn 1.2s ease-in;
+}
+
+section h2 {
+    color: #123c69;
+    margin-bottom: 15px;
+}
+
+section p {
+    margin-bottom: 12px;
+}
+
+section ul {
+    padding-left: 25px;
+}
+
+section li {
+    margin-bottom: 8px;
+}
+
+/* FOOTER */
+footer {
+    background-color: #102a43;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* ANIMATIONS */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MOBILE DESIGN */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 26px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 8px;
+    }
+
+    main {
+        margin: 20px auto;
+    }
+
+    section {
+        padding: 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* TECHNOLOGY TABLE */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background-color: #123c69;
+    color: white;
+    padding: 15px;
+    text-align: left;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: middle;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f0f6fc;
+}
+
+tbody tr:hover {
+    background-color: #dceef8;
+}
+
+td img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+td:nth-child(2) {
+    font-weight: bold;
+    color: #123c69;
+}
+
+.profile-photo {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* OPENLAYERS MAP */
+
+
+
+
+#ol-map {
+    width: 100%;
+    height: 450px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #d4dce5;
+}
+
+/* LEAFLET MAP */
+
+#leaflet-map {
+    width: 100%;
+    height: 450px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #d4dce5;
+}
+
+/* =======================================
+   DICLE'S CATLAS - PERSONAL WEBSITE
+   Only applies to the homepage
+======================================= */
+
+.catlas-page {
+    background: #fffaf4;
+    color: #654b42;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    line-height: 1.7;
+}
+
+/* NAVIGATION */
+
+.catlas-page .catlas-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 18px;
+    padding: 22px 6%;
+    background: #fffaf4;
+    border-bottom: 1px solid #ebd9cb;
+    text-align: left;
+}
+
+.catlas-page .catlas-logo {
+    font-size: 23px;
+    font-weight: bold;
+    color: #795243;
+    text-decoration: none;
+    margin: 0;
+}
+
+.catlas-page .catlas-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.catlas-page .catlas-links a {
+    color: #795243;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.catlas-page .catlas-links a:hover {
+    color: #d08d6b;
+}
+
+/* HERO SECTION */
+
+.catlas-page .catlas-hero {
+    background: #fae9dc;
+    padding: 85px 7%;
+    color: #795243;
+    text-align: left;
+}
+
+.catlas-page .catlas-hero-inner {
+    max-width: 1150px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 45px;
+}
+
+.catlas-page .catlas-eyebrow {
+    color: #b47b61;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.catlas-page .catlas-hero h1 {
+    color: #795243;
+    font-size: clamp(36px, 5vw, 65px);
+    line-height: 1.2;
+    margin-bottom: 25px;
+    animation: catlasFade 1.2s ease;
+}
+
+.catlas-page .catlas-hero h1 span {
+    color: #bc8467;
+    font-style: italic;
+}
+
+.catlas-page .catlas-hero-subtitle {
+    font-size: 19px;
+    color: #a6755f;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.catlas-page .catlas-hero-description {
+    font-size: 16px;
+    color: #795f51;
+    max-width: 530px;
+    margin-bottom: 28px;
+}
+
+.catlas-page .catlas-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.catlas-page .catlas-button-primary,
+.catlas-page .catlas-button-secondary {
+    display: inline-block;
+    text-decoration: none;
+    padding: 13px 22px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.catlas-page .catlas-button-primary {
+    color: white;
+    background: #93634f;
+}
+
+.catlas-page .catlas-button-secondary {
+    color: #795243;
+    border: 1px solid #c8a995;
+    background: #fffaf4;
+}
+
+.catlas-page .catlas-button-primary:hover,
+.catlas-page .catlas-button-secondary:hover {
+    transform: translateY(-3px);
+}
+
+.catlas-page .catlas-button-primary:hover {
+    background: #b47b61;
+}
+
+/* HERO CAT ILLUSTRATION */
+
+.catlas-page .catlas-hero-decoration {
+    position: relative;
+    background: #fffaf4;
+    border: 2px dashed #dfbba5;
+    border-radius: 25px;
+    padding: 35px 20px;
+    text-align: center;
+    transform: rotate(2deg);
+    box-shadow: 0 12px 25px rgba(121,82,67,0.09);
+}
+
+.catlas-page .catlas-stamp {
+    display: inline-block;
+    border: 2px solid #c89177;
+    border-radius: 50px;
+    padding: 7px 14px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #b47b61;
+    font-weight: bold;
+}
+
+.catlas-page .catlas-illustration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 25px 0;
+}
+
+.catlas-page .catlas-big-cat {
+    font-size: clamp(65px, 9vw, 120px);
+    animation: catlasFloat 3s ease-in-out infinite;
+}
+
+.catlas-page .catlas-globe {
+    font-size: clamp(55px, 7vw, 90px);
+}
+
+.catlas-page .catlas-hero-decoration p {
+    font-style: italic;
+    color: #a6755f;
+}
+
+.catlas-page .catlas-paw-trail {
+    margin-top: 15px;
+    letter-spacing: 5px;
+    color: #b47b61;
+}
+
+/* MAIN CONTENT */
+
+.catlas-page .catlas-main {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 30px 25px;
+}
+
+.catlas-page .catlas-section {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    border-bottom: 1px solid #eadbd0;
+    padding: 55px 0;
+    margin-bottom: 12px;
+}
+
+.catlas-page .catlas-section-label {
+    color: #b47b61;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+.catlas-page .catlas-section h2 {
+    color: #795243;
+    font-size: clamp(26px, 3vw, 36px);
+    margin-bottom: 26px;
+}
+
+.catlas-page .catlas-section h3 {
+    color: #795243;
+}
+
+.catlas-page .catlas-section p {
+    color: #795f51;
+    margin-bottom: 15px;
+}
+
+/* PROFILE PHOTO */
+
+.catlas-page .catlas-about-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.catlas-page .catlas-photo-frame {
+    background: #f8e8da;
+    padding: 15px 15px 10px;
+    border-radius: 20px;
+    transform: rotate(-2deg);
+    box-shadow: 0 8px 22px rgba(121,82,67,0.1);
+}
+
+.catlas-page .catlas-profile-photo {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 13px;
+}
+
+.catlas-page .catlas-photo-frame p {
+    text-align: center;
+    margin-top: 14px;
+    font-style: italic;
+    font-size: 13px;
+}
+
+.catlas-page .catlas-about-text {
+    font-size: 16px;
+}
+
+/* CARDS */
+
+.catlas-page .catlas-card {
+    background: #ffffff;
+    border: 1px solid #efddd0;
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 5px 15px rgba(121,82,67,0.04);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.catlas-page .catlas-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(121,82,67,0.1);
+}
+
+.catlas-page .catlas-card-icon {
+    display: block;
+    font-size: 32px;
+    margin-bottom: 14px;
+}
+
+.catlas-page .catlas-card h3 {
+    color: #795243;
+    margin-bottom: 10px;
+}
+
+.catlas-page .catlas-card-tag {
+    color: #b47b61 !important;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.catlas-page .catlas-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin: 20px 0 25px;
+}
+
+.catlas-page .catlas-two-columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.catlas-page .catlas-text-link {
+    color: #a6755f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* TRAVEL SECTION */
+
+.catlas-page .catlas-travel-box {
+    background: #f8e8da;
+    padding: 35px;
+    border-radius: 22px;
+    text-align: center;
+}
+
+.catlas-page .catlas-travel-icon {
+    font-size: 39px;
+    margin-bottom: 20px;
+}
+
+.catlas-page .catlas-travel-quote {
+    font-style: italic;
+    font-size: 19px;
+    font-weight: bold;
+    color: #a6755f !important;
+    margin-top: 20px;
+}
+
+/* MAPS PREVIEW */
+
+.catlas-page .catlas-maps-preview {
+    text-align: center;
+    background: #fff1e4;
+    border-radius: 25px;
+    padding: 55px 30px;
+    margin: 50px 0;
+}
+
+.catlas-page .catlas-maps-preview p {
+    max-width: 650px;
+    margin: 0 auto 20px;
+}
+
+.catlas-page .catlas-maps-preview .catlas-button-primary {
+    margin-top: 15px;
+}
+
+/* FOOTER */
+
+.catlas-page .catlas-footer {
+    background: #795243;
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+    margin-top: 0;
+}
+
+.catlas-page .catlas-footer h3 {
+    color: white;
+    margin-bottom: 12px;
+}
+
+.catlas-page .catlas-footer p {
+    color: #fff1e4;
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+/* ANIMATIONS */
+
+@keyframes catlasFade {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes catlasFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .catlas-page .catlas-nav {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .catlas-page .catlas-links {
+        justify-content: center;
+    }
+
+    .catlas-page .catlas-hero-inner,
+    .catlas-page .catlas-about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .catlas-page .catlas-hero {
+        padding: 55px 6%;
+    }
+
+    .catlas-page .catlas-hero-decoration {
+        max-width: 400px;
+        width: 100%;
+        margin: auto;
+    }
+
+    .catlas-page .catlas-card-grid,
+    .catlas-page .catlas-two-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .catlas-page .catlas-main {
+        padding: 15px 20px;
+    }
+
+    .catlas-page .catlas-section {
+        padding: 35px 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .catlas-page *,
+    .catlas-page *::before,
+    .catlas-page *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* DICLE'S CATLAS - MAPS PAGE */
+
+.catlas-maps-page {
+    background: #fffaf4;
+    color: #795243;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
+/* Header */
+.catlas-maps-page > header {
+    background: #fae9dc;
+    color: #795243;
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.catlas-maps-page > header h1 {
+    color: #795243;
+    font-size: clamp(30px, 5vw, 48px);
+}
+
+.catlas-maps-page > header p {
+    color: #a6755f;
+}
+
+/* Navigation */
+.catlas-maps-page > nav {
+    background: #fffaf4;
+    border-bottom: 1px solid #ebd9cb;
+    padding: 22px 15px;
+}
+
+.catlas-maps-page > nav a {
+    color: #795243;
+    font-weight: bold;
+    margin: 0 18px;
+}
+
+.catlas-maps-page > nav a:hover {
+    color: #d08d6b;
+}
+
+/* Content area */
+.catlas-maps-page > main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Map sections */
+.catlas-maps-page main section {
+    background: white;
+    border: 1px solid #efddd0;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 20px rgba(121,82,67,0.06);
+}
+
+.catlas-maps-page main section h2 {
+    color: #795243;
+}
+
+.catlas-maps-page main section p {
+    color: #795f51;
+}
+
+/* Preserve map sizes */
+.catlas-maps-page #ol-map,
+.catlas-maps-page #leaflet-map {
+    width: 100%;
+    height: 450px;
+    border: 1px solid #eadbd0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Footer */
+.catlas-maps-page > footer {
+    background: #795243;
+    color: #fffaf4;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .catlas-maps-page > nav a {
+        display: inline-block;
+        margin: 7px 10px;
+    }
+
+    .catlas-maps-page main section {
+        padding: 15px;
+    }
+}
+
+/* DICLE'S CATLAS - TRAVEL MARKERS */
+
+.catlas-maps-page .catlas-paw-marker {
+    background: #fff5e9;
+    border: 2px solid #b47b61;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+}
+
+.catlas-maps-page .catlas-paw-marker span {
+    font-size: 21px;
+    line-height: 1;
+}
+
+.catlas-maps-page .catlas-paw-marker:hover {
+    transform: scale(1.15);
+    background: #fae9dc;
+}
+
+.catlas-maps-page .leaflet-popup-content {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    color: #795243;
+    text-align: center;
+}
+
+.catlas-maps-page .leaflet-popup-content strong {
+    font-size: 16px;
+}
+
+.catlas-maps-page .leaflet-popup-content p {
+    margin: 5px 0;
+}
